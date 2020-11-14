@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 app.get('/tiktok', async (req,res) => {
     var URL = req.query.URL;
     const gets = await getVideo(URL);
-    res.json(gets)
+    res.send(gets)
 });
 
 app.listen(port, () => {
