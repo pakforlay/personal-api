@@ -31,11 +31,14 @@ app.listen(port, () => {
 
 
 // static web
-app.use(express.static('website'))
-app.use('/css', express.static(__dirname + 'website/css'))
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + 'public/css'))
+
+
 app.get('', (req, res) => {
-    res.send(__dirname + '/website/index.html')
+    res.sendFile(__dirname + '/views/index.html')
 });
+
 
 app.get('/tiktok', async (req,res) => {
     var URL = req.query.URL;
