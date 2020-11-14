@@ -24,8 +24,8 @@ const app = express();
 
 app.use(cors())
 
-app.listen(() => {
-    console.log("Server berjalan");
+app.listen(80, () => {
+    console.log("Server berjalan di port 80");
 });
 
 app.get('/tik', async (req,res) => {
