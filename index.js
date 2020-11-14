@@ -24,8 +24,9 @@ const app = express();
 
 app.use(cors())
 
-app.listen(80, () => {
-    console.log("Server berjalan di port 80");
+let port = process.env.PORT || 8080;
+app.listen(port, () => {
+    console.log(`Server sedang berjalan di ${port}`);
 });
 
 app.get('/', (req, res) => {
