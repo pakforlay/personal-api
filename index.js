@@ -29,8 +29,12 @@ app.listen(port, () => {
     console.log(`Server sedang berjalan di ${port}`);
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello World ! ! !')
+
+// static web
+app.use(express.static('website'))
+app.use('/css', express.static(__dirname + 'website/css'))
+app.get('', (req, res) => {
+    res.send(__dirname + '/website/index.html')
 });
 
 app.get('/tiktok', async (req,res) => {
