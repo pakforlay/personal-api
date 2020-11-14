@@ -4,7 +4,7 @@
   "description": "Api Priv8 PakForlay",
   "main": "index.php",
   "scripts": {
-    "test": ""
+    "start": "node tiktok.js"
   },
   "repository": {
     "type": "git",
