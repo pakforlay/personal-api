@@ -3,7 +3,7 @@ const cors = require("cors");
 const puppeteer = require("puppeteer");
 
 async function getVideo(URL) {
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']})    ;
     const page = await browser.newPage();
     await page.goto('https://musicallydown.com');
 
@@ -24,7 +24,7 @@ const app = express();
 
 app.use(cors())
 
-let port = process.env.PORT || 8080;
+let port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Server sedang berjalan di ${port}`);
 });
