@@ -30,10 +30,10 @@ async function getYtVid(URL) {
 	await page.click('#dlBTNtext', {delay: 300});
 
     await page.waitForSelector('#results > div.row > div.col-12.col-md-6.col-lg-8 > a');
-    let getVideo = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
+    let ytLink = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
         return element.getAttribute('href');
     });
-    return { getVideo }
+    return { ytLink }
 }
 
 async function getYtMus(URL) {
@@ -45,10 +45,10 @@ async function getYtMus(URL) {
 	await page.click('#btnGet > i', {delay: 300});
 
     await page.waitForSelector('#btnDown');
-    let getVideo = await page.$eval('#btnDown', (element) => {
+    let ytMusic = await page.$eval('#btnDown', (element) => {
         return element.getAttribute('href');
     });
-    return { getVideo }
+    return { ytMusic }
 }
 const app = express();
 
@@ -84,6 +84,6 @@ app.get('/ytMus', async (req,res) => {
 
 app.get('/ytVid', async (req,res) => {
     var URL = req.query.URL;
-    const gets = await getYt(URL);
+    const gets = await getYtVid(URL);
     res.json(gets)
 });
