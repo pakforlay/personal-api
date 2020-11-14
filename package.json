@@ -2,7 +2,7 @@
   "name": "personal-website",
   "version": "1.0.0",
   "description": "Api Priv8 PakForlay",
-  "main": "index.php",
+  "main": "index.js",
   "scripts": {
     "start": "node tiktok.js"
   },
