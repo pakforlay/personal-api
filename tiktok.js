@@ -28,7 +28,7 @@ app.listen(3000, () => {
     console.log("Server berjalan di port 3000");
 });
 
-app.get('/tik', async (req,res) => {
+app.get('/tiktok', async (req,res) => {
     var URL = req.query.URL;
     const gets = await getVideo(URL);
     res.json(gets)
