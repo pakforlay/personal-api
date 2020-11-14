@@ -5,6 +5,6 @@
         </title>
     </head>
     <body>
-        <H1>Yaelahdo Priv8 API</H1>
+        <h1>Yaelahdo Priv8 API</h1>
     </body>
 </html>
