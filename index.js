@@ -20,36 +20,6 @@ async function getVideo(URL) {
     });
     return { poster, mp4direct }
 }
-
-async function getYtVid(URL) {
-    const browser = await puppeteer.launch({headless: false});
-    const page = await browser.newPage();
-    await page.goto('https://keepv.id/');
-
-    await page.type('#dlURL', `${URL}`);
-	await page.click('#dlBTNtext', {delay: 300});
-
-    await page.waitForSelector('#results > div.row > div.col-12.col-md-6.col-lg-8 > a');
-    let ytLink = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
-        return element.getAttribute('href');
-    });
-    return { ytLink }
-}
-
-async function getYtMus(URL) {
-    const browser = await puppeteer.launch({headless: false});
-    const page = await browser.newPage();
-    await page.goto('https://x2convert.com/en8/download-youtube-to-mp3-music');
-
-    await page.type('#frmGetLink > div:nth-child(3) > div:nth-child(2) > div:nth-child(1)', `${URL}`);
-	await page.click('#btnGet > i', {delay: 300});
-
-    await page.waitForSelector('#btnDown');
-    let ytMusic = await page.$eval('#btnDown', (element) => {
-        return element.getAttribute('href');
-    });
-    return { ytMusic }
-}
 const app = express();
 
 app.use(cors())
@@ -61,29 +31,10 @@ app.listen(port, () => {
 
 
 // static web
-app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'public/css'))
-
-
-app.get('', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html')
-});
 
 
 app.get('/tiktok', async (req,res) => {
     var URL = req.query.URL;
     const gets = await getVideo(URL);
-    res.json(gets)
-});
-
-app.get('/ytMus', async (req,res) => {
-    var URL = req.query.URL;
-    const gets = await getYtMus(URL);
-    res.json(gets)
-});
-
-app.get('/ytVid', async (req,res) => {
-    var URL = req.query.URL;
-    const gets = await getYtVid(URL);
     res.json(gets)
 });
