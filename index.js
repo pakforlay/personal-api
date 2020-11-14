@@ -1,6 +1,10 @@
 const express = require("express");
 const puppeteer = require("puppeteer");
 
+const app = express();
+let port = process.env.PORT || 3000;
+
+
 async function getVideo(URL) {
     const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
@@ -20,14 +24,6 @@ async function getVideo(URL) {
     return { poster, mp4direct }
 }
 
-const app = express();
-app.use(cors())
-let port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-    console.log(`Server berjalan di port ${port}`);
-});
-
 app.get("/", (req, res) => {
     res.send("Hello World ! ! !");
 });
@@ -36,4 +32,8 @@ app.get('/tiktok', async (req,res) => {
     var URL = req.query.URL;
     const gets = await getVideo(URL);
     res.json(gets)
+});
+
+app.listen(port, () => {
+    console.log(`Server berjalan di port ${port}`);
 });
