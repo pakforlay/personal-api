@@ -21,20 +21,20 @@ async function getVideo(URL) {
     return { poster, mp4direct }
 }
 
-// async function getYtVid(URL) {
-   // const browser = await puppeteer.launch({headless: false});
-   // const page = await browser.newPage();
-  //  await page.goto('https://keepv.id/');
-//
-  //  await page.type('#dlURL', `${URL}`);
-//	await page.click('#dlBTNtext', {delay: 300});
+async function getYtVid(URL) {
+   const browser = await puppeteer.launch({headless: false});
+   const page = await browser.newPage();
+   await page.goto('https://keepv.id/');
+    
+  await page.type('#dlURL', `${URL}`);
+  await page.click('#dlBTNtext', {delay: 300});
 
-  //  await page.waitForSelector('#results > div.row > div.col-12.col-md-6.col-lg-8 > a');
-   // let ytLink = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
-     //   return element.getAttribute('href');
-   // });
-   // return { ytLink }
-// }
+  await page.waitForSelector('#results > div.row > div.col-12.col-md-6.col-lg-8 > a');
+  let ytLink = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
+     return element.getAttribute('href');
+   });
+   return { ytLink }
+}
 
 // async function getYtMus(URL) {
    // const browser = await puppeteer.launch({headless: false});
@@ -75,11 +75,11 @@ app.get('/tiktok', async (req,res) => {
   //  res.sendFile(__dirname + '/views/index.html')
 //});
 
-// app.get('/ytMus', async (req,res) => {
- //   var URL = req.query.URL;
- //   const gets = await getYtMus(URL);
- //   res.json(gets)
-// });
+app.get('/ytVid', async (req,res) => {
+ var URL = req.query.URL;
+ const gets = await getYtVid(URL);
+    res.json(gets)
+});
 
 // app.get('/ytVid', async (req,res) => {
    // var URL = req.query.URL;
