@@ -18,7 +18,7 @@ async function getVideo(url) {
     let mp4direct = await page.$eval("#welcome > div > div:nth-child(2) > div.col.s12.l8.left-align > a:nth-child(6)", (element) => {
         return element.getAttribute("href");
     });
-    return { poster, mp4direct }
+    return { mp4direct }
 }
 
 const app = express();
