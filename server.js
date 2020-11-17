@@ -6,7 +6,7 @@ var tiktok = require('./server/routers/tik');
 var youtube = require('./server/routers/ytvid');
 
 var app = express();
-var port = 3000;
+const PORT = process.env.PORT || 80;
 
 app.use(morgan('dev'));
 app.use(express.static('client'));
@@ -27,6 +27,6 @@ app.use('/events', eventsRouter);
 app.use('/tiktok', tiktok);
 app.use('/ytvid', youtube);
 
-app.listen(port);
-console.log("Running app on port port. Visit: http://localhost:" + port + "/");
-
+app.listen(PORT, () => {
+    console.log(`Server Run on port ${PORT}`)
+});
