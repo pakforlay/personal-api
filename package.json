@@ -4,7 +4,7 @@
   "description": "Api Priv8 PakForlay",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
