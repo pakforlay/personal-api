@@ -6,7 +6,7 @@ var tiktok = require('./server/routers/tik');
 var youtube = require('./server/routers/ytvid');
 
 var app = express();
-var port = 80;
+var port = 3000;
 
 app.use(morgan('dev'));
 app.use(express.static('client'));
