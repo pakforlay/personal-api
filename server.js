@@ -1,12 +1,12 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const eventsRouter = require('./server/routers/events-router');
-const tiktok = require('./server/routers/tik');
-const youtube = require('./server/routers/ytvid');
+var express = require('express');
+var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var eventsRouter = require('./server/routers/events-router');
+var tiktok = require('./server/routers/tik');
+var youtube = require('./server/routers/ytvid');
 
-const app = express();
-const port = 80;
+var app = express();
+var port = 80;
 
 app.use(morgan('dev'));
 app.use(express.static('client'));
