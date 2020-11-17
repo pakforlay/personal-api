@@ -2,7 +2,10 @@ const tiktok = require('express').Router();
 const puppeteer = require("puppeteer");
 
 async function getVideo(URL) {
-    const browser = await puppeteer.launch({headless: true});
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
     const page = await browser.newPage();
     await page.goto('https://musicallydown.com');
 
