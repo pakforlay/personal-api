@@ -1,9 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var eventsRouter = require('./server/routers/events-router');
-var tiktok = require('./server/routers/tik');
-var youtube = require('./server/routers/ytvid');
+var eventsRouter = require('./routers/events-router');
+var tiktok = require('./routers/tik');
+var youtube = require('./routers/ytvid');
 
 var app = express();
 var port = 80;
