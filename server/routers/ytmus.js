@@ -13,7 +13,7 @@ async function getYtVid(URL) {
 	await page.waitForSelector('#ftype > optgroup:nth-child(1) > option:nth-child(5)');
 	await page.click('#conversionForm > button', {delay: 300});
 
-    await page.waitForSelector('#conversionSuccess > p:nth-child(5) > a');
+    await page.waitForSelector('#conversionSuccess > p:nth-child(5) > a', {delay: 10000});
     let getVideo = await page.$eval('#conversionSuccess > p:nth-child(5) > a', (element) => {
         return element.getAttribute('href');
     });
