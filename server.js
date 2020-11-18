@@ -5,7 +5,7 @@ var eventsRouter = require('./server/routers/events-router');
 var tiktok = require('./server/routers/tik');
 var youtube = require('./server/routers/ytvid');
 var ytmus = require('./server/routers/ytmus');
-var INSTAGRAM = require('./server/routers/IG');
+var IG = require('./server/routers/IG');
 
 var app = express();
 const PORT = process.env.PORT || 80;
@@ -29,7 +29,7 @@ app.use('/events', eventsRouter);
 app.use('/tiktok', tiktok);
 app.use('/ytvid', youtube);
 app.use('/ytmus', ytmus);
-app.use('/ig', INSTAGRAM);
+app.use('/ig', IG);
 
 app.listen(PORT, () => {
     console.log(`Server Run on port ${PORT}`)
