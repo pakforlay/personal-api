@@ -1,7 +1,7 @@
-const INSTAGRAM = require('express').Router();
+const ig = require('express').Router();
 const puppeteer = require("puppeteer");
 
-async function IG(URL) {
+async function igram(URL) {
     const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
     await page.goto('https://downloadgram.com/');
@@ -18,8 +18,8 @@ async function IG(URL) {
 
 youtube.get('/', async (req, res) => {
     var URL = req.query.URL;
-    const gets = await IG(URL);
+    const gets = await igram(URL);
     res.json(gets)
 });
 
-module.exports = INSTAGRAM;
+module.exports = ig;
