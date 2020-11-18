@@ -16,6 +16,7 @@ async function getYtVid(URL) {
     let getVideo = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
         return element.getAttribute('href');
     });
+	browser.close()
     return { getVideo }
 }
 
