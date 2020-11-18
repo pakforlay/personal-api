@@ -1,7 +1,7 @@
 const ytmus = require('express').Router();
 const puppeteer = require("puppeteer");
 
-async function getYtVid(URL) {
+async function ytMusic(URL) {
     const browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -14,7 +14,7 @@ async function getYtVid(URL) {
 	await page.click('#conversionForm > button', {delay: 300});
 
     await page.waitForSelector('#conversionSuccess > p:nth-child(5) > a', {delay: 10000});
-    let getVideo = await page.$eval('#conversionSuccess > p:nth-child(5) > a', (element) => {
+    let getMusic = await page.$eval('#conversionSuccess > p:nth-child(5) > a', (element) => {
         return element.getAttribute('href');
     });
 	browser.close()
@@ -23,7 +23,7 @@ async function getYtVid(URL) {
 
 ytmus.get('/', async (req, res) => {
     var URL = req.query.URL;
-    const gets = await getYtVid(URL);
+    const gets = await ytMusic(URL);
     res.json(gets)
 });
 
