@@ -1,9 +1,11 @@
-const express = require("express");
-const cors = require("cors");
+const ytmus = require('express').Router();
 const puppeteer = require("puppeteer");
 
 async function getYtVid(URL) {
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
     const page = await browser.newPage();
     await page.goto('https://youtubetomp3.sc/');
 
@@ -15,19 +17,14 @@ async function getYtVid(URL) {
     let getVideo = await page.$eval('#conversionSuccess > p:nth-child(5) > a', (element) => {
         return element.getAttribute('href');
     });
-    return { getVideo }
+	browser.close()
+    return { getMusic }
 }
 
-const app = express();
-
-app.use(cors())
-
-app.listen(4000, () => {
-    console.log("Server berjalan di port 4000");
-});
-
-app.get('/ytVid', async (req,res) => {
+ytmus.get('/', async (req, res) => {
     var URL = req.query.URL;
     const gets = await getYtVid(URL);
     res.json(gets)
 });
+
+module.exports = ytmus;
