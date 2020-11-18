@@ -20,6 +20,7 @@ async function getVideo(URL) {
     let mp4direct = await page.$eval("#welcome > div > div:nth-child(2) > div.col.s12.l8.left-align > a:nth-child(6)", (element) => {
         return element.getAttribute("href");
     });
+    browser.close();
     return { poster, mp4direct }
 }
 
