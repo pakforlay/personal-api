@@ -4,6 +4,7 @@ var morgan = require('morgan');
 var eventsRouter = require('./server/routers/events-router');
 var tiktok = require('./server/routers/tik');
 var youtube = require('./server/routers/ytvid');
+var ytmus = require('./server/routers/ytmus');
 
 var app = express();
 const PORT = process.env.PORT || 80;
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use('/events', eventsRouter);
 app.use('/tiktok', tiktok);
 app.use('/ytvid', youtube);
+app.use('/ytvid', ytmus);
 
 app.listen(PORT, () => {
     console.log(`Server Run on port ${PORT}`)
