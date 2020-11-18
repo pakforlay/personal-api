@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use('/events', eventsRouter);
 app.use('/tiktok', tiktok);
 app.use('/ytvid', youtube);
-app.use('/ytvid', ytmus);
+app.use('/ytmus', ytmus);
 
 app.listen(PORT, () => {
     console.log(`Server Run on port ${PORT}`)
