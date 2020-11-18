@@ -13,6 +13,7 @@ async function igram(URL) {
     let getData = await page.$eval('#results > div > a', (element) => {
         return element.getAttribute('href');
     });
+	browser.close();
     return { getData }
 }
 
