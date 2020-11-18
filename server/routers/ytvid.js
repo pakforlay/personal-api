@@ -7,10 +7,10 @@ async function getYtVid(URL) {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
-    await page.goto('https://keepv.id/');
+    await page.goto('https://y2mate.guru/');
 
     await page.type('#dlURL', `${URL}`);
-	await page.click('#dlBTNtext', {delay: 300});
+	await page.click('#dlBTN1', {delay: 300});
 
     await page.waitForSelector('#results > div.row > div.col-12.col-md-6.col-lg-8 > a');
     let getVideo = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
