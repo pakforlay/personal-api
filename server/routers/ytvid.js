@@ -16,8 +16,9 @@ async function getYtVid(URL) {
     let getVideo = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
         return element.getAttribute('href');
     });
+    let titleInfo = await page.$eval('#results > h2', el => el.innerText);
 	browser.close()
-    return { getVideo }
+    return { getVideo, titleInfo }
 }
 
 youtube.get('/', async (req, res) => {
