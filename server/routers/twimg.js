@@ -16,6 +16,7 @@ async function getData(URL) {
     let images = await page.$eval("#tweeter_search_form > div.center-content > div.img-preview-container > img", (element) => {
         return element.getAttribute("src");
     });
+    	browser.close();
     return { images }
 }
 
