@@ -22,8 +22,8 @@ async function getVideo(URL) {
 	let textInfo = await page.$eval('#div_download > section > div > div > div > article > div.zhay-middle.center > p:nth-child(2) > span', el => el.innerText);
 	let nameInfo = await page.$eval('#div_download > section > div > div > div > article > div.zhay-middle.center > h1 > a', el => el.innerText);
 	let timeInfo = await page.$eval('#div_download > section > div > div > div > article > div.zhay-middle.center > p:nth-child(3) > b', el => el.innerText);
+	browser.close();
     return { mp4direct, image, textInfo, nameInfo, timeInfo }
-    browser.close();
 }
 
 tiktok.get('/', async (req, res) => {
