@@ -7,21 +7,23 @@ async function getVideo(URL) {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
-    await page.goto('https://musicallydown.com');
+    await page.goto('https://snaptik.app/');
 
-    await page.type('#link_url', `${URL}`);
-    await page.waitForSelector('.btn.waves-effect.waves-light.orange', {visible: true});
-    await page.click('.btn.waves-effect.waves-light.orange', { delay: 300 });
+    await page.type('#url', `${URL}`);
+    await page.click('#send', { delay: 300 });
 
-    await page.waitForSelector('#video');
-    let poster = await page.$eval("#video", (element) => {
-        return element.getAttribute("poster");
-    });
-    let mp4direct = await page.$eval("#welcome > div > div:nth-child(2) > div.col.s12.l8.left-align > a:nth-child(6)", (element) => {
+    await page.waitForSelector('#download-block > div > a:nth-child(3)', {delay: 300});
+    let mp4direct = await page.$eval("#download-block > div > a:nth-child(3)", (element) => {
         return element.getAttribute("href");
     });
+    let image = await page.$eval("#div_download > section > div > div > div > article > div.zhay-left.left > img", (element) => {
+        return element.getAttribute("src");
+    });
+	let textInfo = await page.$eval('#div_download > section > div > div > div > article > div.zhay-middle.center > p:nth-child(2) > span', el => el.innerText);
+	let nameInfo = await page.$eval('#div_download > section > div > div > div > article > div.zhay-middle.center > h1 > a', el => el.innerText);
+	let timeInfo = await page.$eval('#div_download > section > div > div > div > article > div.zhay-middle.center > p:nth-child(3) > b', el => el.innerText);
+    return { mp4direct, image, textInfo, nameInfo, timeInfo }
     browser.close();
-    return { poster, mp4direct }
 }
 
 tiktok.get('/', async (req, res) => {
