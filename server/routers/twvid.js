@@ -17,6 +17,7 @@ async function getData(URL) {
     let getVideo = await page.$eval('#twitter_video', (element) => {
         return element.getAttribute('src');
     });
+	browser.close();
     return { getVideo }
 }
 
