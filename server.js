@@ -6,6 +6,7 @@ var tiktok = require('./server/routers/tik');
 var youtube = require('./server/routers/ytvid');
 var ytmus = require('./server/routers/ytmus');
 var instagram = require('./server/routers/IG');
+var film = require('./server/routers/film');
 var twvid = require('./server/routers/twvid');
 var twimg = require('./server/routers/twimg');
 
@@ -34,6 +35,7 @@ app.use('/ytmus', ytmus);
 app.use('/ig', instagram);
 app.use('/twimg', twimg);
 app.use('/twvid', twvid);
+app.use('/film', film);
 
 app.listen(PORT, () => {
     console.log(`Server Run on port ${PORT}`)
