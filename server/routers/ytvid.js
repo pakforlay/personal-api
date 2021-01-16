@@ -9,14 +9,15 @@ async function getYtVid(URL) {
     const page = await browser.newPage();
     await page.goto('https://keepv.id/');
 
-    await page.type('#dlURL', `${URL}`);
-	await page.click('#dlBTN1', {delay: 300});
+    await page.type('#txt-url', `${URL}`);
+	await page.click('#btn-submit', {delay: 300});
+	await page.click('#mp4 > table > tbody > tr:nth-child(2) > td.txt-center > a', {delay: 300});
 
-    await page.waitForSelector('#results > div.row > div.col-12.col-md-6.col-lg-8 > a');
-    let getVideo = await page.$eval('#results > div.row > div.col-12.col-md-6.col-lg-8 > a', (element) => {
+    await page.waitForSelector('#process-result > div > a');
+    let getVideo = await page.$eval('#process-result > div > a', (element) => {
         return element.getAttribute('href');
     });
-    let titleInfo = await page.$eval('#results > h2', el => el.innerText);
+    let titleInfo = await page.$eval('#exampleModalLabel', el => el.innerText);
 	browser.close()
     return { getVideo, titleInfo }
 }
