@@ -7,7 +7,7 @@ async function getYtVid(URL) {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
-    await page.goto('https://keepv.id/');
+    await page.goto('https://www.y2mate.com/');
 
     await page.type('#txt-url', `${URL}`);
 	await page.click('#btn-submit', {delay: 300});
