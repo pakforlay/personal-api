@@ -1,223 +1,151 @@
-<!DOCTYPE HTML>
-<html>
-<head><title>Hai Mut</title>
-<!-- Created By PakForlay -->
-<script>alert ('hai mutiara ramadhani')
-alert ('Izin berterus terang yee.')</script>
-<script language="JavaScript"> 
- 
-function tb5_makeArray(n){
- this.length = n;
- return this.length;
-}
- 
-tb5_messages = new tb5_makeArray(7);
-tb5_messages[0] = "Hay Mutiara Ramadhano";
-tb5_messages[1] = "Aku Nak Ko Tau";
-tb5_messages[2] = "Aku Punye rase kan ko";
-tb5_messages[3] = "Aku Serius mut";
-tb5_messages[4] = "I Love U Mut!!!";
-tb5_rptType = 'infinite';
-tb5_rptNbr = 20;
-tb5_speed = 30;
-tb5_delay = 2000;
-var tb5_counter=2;
-var tb5_currMsg=0;
-var tb5_stsmsg="";
-function tb5_shuffle(arr){
-var k;
-for (i=0; i<arr.length; i++){
- k = Math.round(Math.random() * (arr.length - i - 1)) + i;
- temp = arr[i];arr[i]=arr[k];arr[k]=temp;
-}
-return arr;
-}
-tb5_arr = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
-tb5_sts = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
-for (var i=0; i<tb5_messages[tb5_currMsg].length; i++){
- tb5_arr[i] = i;
- tb5_sts[i] = "_";
-}
-tb5_arr = tb5_shuffle(tb5_arr);
-function tb5_init(n){
-var k;
-if (n == tb5_arr.length){
- if (tb5_currMsg == tb5_messages.length-1){
- if ((tb5_rptType == 'finite') && (tb5_counter==tb5_rptNbr)){
- clearTimeout(tb5_timerID);
- return;
- }
- tb5_counter++;
- tb5_currMsg=0;
- }
- else{
- tb5_currMsg++;
- }
- n=0;
- tb5_arr = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
- tb5_sts = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
- for (var i=0; i<tb5_messages[tb5_currMsg].length; i++){
- tb5_arr[i] = i;
- tb5_sts[i] = "_";
- }
- tb5_arr = tb5_shuffle(tb5_arr);
- tb5_sp=tb5_delay;
-}
-else{
- tb5_sp=tb5_speed;
- k = tb5_arr[n];
- tb5_sts[k] = tb5_messages[tb5_currMsg].charAt(k);
- tb5_stsmsg = "";
- for (var i=0; i<tb5_sts.length; i++)
- tb5_stsmsg += tb5_sts[i];
- document.title = tb5_stsmsg;
- n++;
- }
- tb5_timerID = setTimeout("tb5_init("+n+")", tb5_sp);
-}
-function tb5_randomizetitle(){
- tb5_init(0);
-}
-tb5_randomizetitle();
- 
-</script>
-</br><center><a href="http://L3m4r1.blogspot.com"><img src="https://assets.jalantikus.com/assets/cache/500/346/userfiles/2018/11/15/gambar-anime-romantis-10-3bbdd.jpg"alt="Lolykuu" width="30% atau xpx" height="40% atau ypx"/></a> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Happy Birthday My Friend" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Bunga Divia <3</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
-<body BGCOLOR="black">
-<center><center>
-<br><font size="6"><font color="red" face="courier new">Touched by: PakForlay</font>
-<br><br><!-- Created By L3M4R1 -->
-<font size="5"><font color="white" face="courier new">Aku dak pandai dalam hal pembuatan puisi</font>
-<br><font size="5"><font color="white" face="courier new">Tapi selama ini aku yang diam diam nulong pembuatan tugas ko</font>
-<br><font size="5"><font color="white" face="courier new">Aku nyimpan rase, meskipun aku tau hasil nye kayak gmn wkwk</font>
-<br><font size="5"><font color="white" face="courier new">terus terang aja, nak ke punye hubungen spesial dgn aku??!?</font>
-<br><a href="https://api.whatsapp.com/send?phone=6287880001337&text=Ye%20bang%20nak"><input type="button" value="Yes I do" onclick="alert('Makase ya allah, lah ngabulek doa aku');" style="font size="5"></a><><><><a href="https://api.whatsapp.com/send?phone=6287880001337&text=maaf%20bang%20aku%20dak%20dpt"><input type="button" value=" Im sorry" onclick="alert('Oke dpp wkwk ^_^');" style="font size="5"></a>
-<br><br><br><hr color="red"><!-- Created By L3M4R1 -->
-<font size="4"><font color="white" face="courier new">("Thanks to:")</font>
-<marquee><font size="3"><font color="white" face="courier new">All My Friends At Cyber Space</marquee>
-<br><font size="3.5"><font color="white" face="courier new">Indonesian Hacker Rulez</font>
-<br><br><br><a href="http://instagram.com/yaelahdo"><input type="button" value="Contact me on Instagram" onclick="alert('Loading, click ok');""></a>
+
+<body class="d-flex align-items-center bodi" onload="myFunction()">
+    <div id="loader">
+        <center>
+            <img src="https://raw.githubusercontent.com/wafarifki/HappyBirthday-Script/main/assets/image/loaderr.gif" width="80px" height="80px">
+        </center>
+    </div>
+
+    <div class="container" style="display:none;" id="Kontener">
+        <div class="ripple-background">
+            <div class="circle xlarge shade2"></div>
+            <div class="circle large shade3"></div>
+            <div class="circle mediun shade4"></div>
+            <div class="circle small shade5"></div>
+        </div>
+
+
+        <div class="container col-md-6 py-8 animate-bottom">
+            <div class="card">
+                <div class="card-body">
+                    <p class="judul">Hi Bunga Pls Be Happy</p>
+                    <h2 class="subjudul">Aldo D. Pratama</h2>
+                    <hr>
+
+                    <center>
+                        <div id="karosel" class="carousel slide" data-ride="carousel">
+                            <ul class="carousel-indicators">
+                                <li data-target="#karosel" data-slide-to="0" class="active"></li>
+
+                                <li data-target="#karosel" data-slide-to="1"></li>
+
+                                <li data-target="#karosel" data-slide-to="2"></li>
+
+                                <li data-target="#karosel" data-slide-to="3"></li>
+
+                            </ul>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/image/foto1.png" alt="Adit">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/image/foto2.png" alt="Adit">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/image/foto3.png" alt="Adit">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="assets/image/foto4.png" alt="Adit">
+                                </div>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#karosel" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#karosel" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                    </center>
+
+                    <hr>
+
+                    <button type="button" class="tombol" style="width: 100%;" data-toggle="modal" data-target="#Modalmuncul" onclick="Mainkannn(); Gassngetik();">
+                   Klik disini
+                  </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="Modalmuncul" tabindex="-1" role="dialog" aria-labelledby="ModalmunculTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="color: #D3F3EE;" id="exampleModalLongTitle">From AldoG to Bunga Divia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="tekss">
+                        </p>
+                        <br><br> ~Aldo D. Pratama.
+                    </div>
+                    <audio id="lagu" src="assets/lagu/lagu.mp3" preload="auto">
+</audio>
+                    <div class="modal-footer">
+                        <button type="button" class="tombol" data-dismiss="modal" onclick="Mainkannn();">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        function Mainkannn() {
+            var lagu = document.getElementById("lagu");
+            return lagu.paused ? lagu.play() : lagu.pause();
+        };
+    </script>
+    <script src="assets/js/salju.js" type="text/javascript"></script>
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 2200);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("Kontener").style.display = "block";
+        }
+    </script>
+    <script>
+        var i = 0;
+        var txt = "Kekuatan ucapan adalah sebagian dari doa, dan doa yang tulus akan selalu di kabulkan. Semoga di hari lahir lu ini akan membawa keberkahan dan kesuksesan di masa depan lu kelak, Aamiin. Selamat ulang tahun buat sahabat gua yang paling sabar";
+        var speed = 120;
+
+        function Gassngetik() {
+            if (i < txt.length) {
+                document.getElementById("tekss").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(Gassngetik, speed);
+            }
+        }
+    </script>
 </body>
-<style type="text/css">
-body, a:hover {cursor: url(http://cur.cursors-4u.net/cursors/cur-9/cur862.ani), url(http://cur.cursors-4u.net/cursors/cur-9/cur862.png), progress !important; 
-</style>
 
-
-
-<style type="text/css">
-
-#outerCircleText {
-
-font-style: courier new;
-font-weight: bold;
-font-family: 'comic sans ms', verdana, arial;
-color: white;
-
-position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
-#outerCircleText div {position: relative;}
-#outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
-
-</style>
-<script type="text/javascript">
-
-
-;(function(){
-
-
-var msg = " Love you via:*";
-
-var size = 15;
-
-
-var circleY = 0.75; var circleX = 2;
-
-var letter_spacing = 4;
-
-var diameter = 10;
-
-
-var rotation = 0.2;
-
-var speed = 0.3;
-
-
-
-if (!window.addEventListener && !window.attachEvent || !document.createElement) return;
-
-msg = msg.split('');
-var n = msg.length - 1, a = Math.round(size * diameter * 0.208333), currStep = 20,
-ymouse = a * circleY + 20, xmouse = a * circleX + 20, y = [], x = [], Y = [], X = [],
-o = document.createElement('div'), oi = document.createElement('div'),
-b = document.compatMode && document.compatMode != "BackCompat"? document.documentElement : document.body,
-
-mouse = function(e){
- e = e || window.event;
- ymouse = !isNaN(e.pageY)? e.pageY : e.clientY; // y-position
- xmouse = !isNaN(e.pageX)? e.pageX : e.clientX; // x-position
-},
-
-makecircle = function(){ // rotation/positioning
- if(init.nopy){
-  o.style.top = (b || document.body).scrollTop + 'px';
-  o.style.left = (b || document.body).scrollLeft + 'px';
- };
- currStep -= rotation;
- for (var d, i = n; i > -1; --i){ // makes the circle
-  d = document.getElementById('iemsg' + i).style;
-  d.top = Math.round(y[i] + a * Math.sin((currStep + i) / letter_spacing) * circleY - 15) + 'px';
-  d.left = Math.round(x[i] + a * Math.cos((currStep + i) / letter_spacing) * circleX) + 'px';
- };
-},
-
-drag = function(){ // makes the resistance
- y[0] = Y[0] += (ymouse - Y[0]) * speed;
- x[0] = X[0] += (xmouse - 20 - X[0]) * speed;
- for (var i = n; i > 0; --i){
-  y[i] = Y[i] += (y[i-1] - Y[i]) * speed;
-  x[i] = X[i] += (x[i-1] - X[i]) * speed;
- };
- makecircle();
-},
-
-init = function(){ 
- if(!isNaN(window.pageYOffset)){
-  ymouse += window.pageYOffset;
-  xmouse += window.pageXOffset;
- } else init.nopy = true;
- for (var d, i = n; i > -1; --i){
-  d = document.createElement('div'); d.id = 'iemsg' + i;
-  d.style.height = d.style.width = a + 'px';
-  d.appendChild(document.createTextNode(msg[i]));
-  oi.appendChild(d); y[i] = x[i] = Y[i] = X[i] = 0;
- };
- o.appendChild(oi); document.body.appendChild(o);
- setInterval(drag, 25);
-},
-
-ascroll = function(){
- ymouse += window.pageYOffset;
- xmouse += window.pageXOffset;
- window.removeEventListener('scroll', ascroll, false);
-};
-
-o.id = 'outerCircleText'; o.style.fontSize = size + 'px';
-
-if (window.addEventListener){
- window.addEventListener('load', init, false);
-
- document.addEventListener('mouseover', mouse, false);
- document.addEventListener('mousemove', mouse, false);
-  if (/Apple/.test(navigator.vendor))
-   window.addEventListener('scroll', ascroll, false);
-}
-else if (window.attachEvent){
- window.attachEvent('onload', init);
- document.attachEvent('onmousemove', mouse);
-};
-
-})();
-
-</script>
-<!-- copyright@2k19 by L3M4R1 --> <!-- Tolong jangan hapus copyright nya yah :v tolong hargai karya saya L3M4R1 -->
-<iframe width="0%" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314301457&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 </html>
