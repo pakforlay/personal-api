@@ -1,0 +1,64 @@
+.text-highlight {
+    color: $site-blue;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    line-height: 2.1em;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 0.75em 0;
+}
+h3 {
+    font-size: 1.17em;
+    margin: 0.83em 0;
+}
+h5 {
+    font-size: 0.83em;
+    margin: 1.5em 0;
+}
+h6 {
+    font-size: 0.75em;
+    margin: 1.67em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &.bold {
+        font-weight: bolder;
+    }
+
+    &.capitalize {
+        text-transform: capitalize;
+    }
+}
+
+a {
+    color: $site-blue;
+}
+
+p {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+i.fa {
+    font-family: "fontawesome";
+    font-style: none;
+}
+
+@media screen and (max-width: 625px) {
+
+    h1 {
+        font-size: 1.7em;
+        margin: 0.67em 0;
+        line-height: 2.1em;
+    }
+    
+}
